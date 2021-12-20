@@ -1,5 +1,7 @@
 package _11m._01d_19;
 
+import java.io.File;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -9,7 +11,7 @@ import java.util.TimeZone;
 //Gregoriánský kalendář se používá od 15.10.1582, roky dělitené 100 nejsou npřestupné, roky dělitelné
 //400 přestupné jsou.
 public class GregorianCalendar_ {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
      //aktuální datum a čas
         GregorianCalendar gc = new GregorianCalendar();
         System.out.println(new SimpleDateFormat("dd.MM.YYYY hh:mm:ss").format(gc.getTime()));

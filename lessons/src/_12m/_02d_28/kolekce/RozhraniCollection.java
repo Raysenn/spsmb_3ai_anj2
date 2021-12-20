@@ -17,11 +17,11 @@ public class RozhraniCollection {
  * boolean remove() - removeAll(Collection<?> c) - odstranění
  *      všech prvků nacházejících se současně v jiné kolekci.
  * boolean retainAll(Collection<?> c) - ponechání pouze prvků
- *      nacháyejících se současně v jiné kolekci
+ *      nacházejících se současně v jiné kolekci
  *
  * Dynamické vlastnosti kolekcí
  * int size() - vrátí aktuální počet prvků kolekce
- * boolean isEmbpty()
+ * boolean isEmpty()
  * boolean contains( Object o) - test, zda daný prvek je v kolekci obsažen
  * boolean containsAll(Collection<?> c) - test, zda jsou všechny
  *      prvky jiné kolekce obsaženy v této kolekci
