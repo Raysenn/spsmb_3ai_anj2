@@ -1,10 +1,13 @@
-package _12m._20d_33;
+package _22._01m._03d_34;
 
 import java.util.HashMap;
 import java.util.Map;
 
 //Praktické použití mapy
-public class NastaveniVMape {
+public class
+
+
+NastaveniVMape {
     private static String[] key = {"pozadi", "popredi", "ramecek"};
     private static String[] hodDef = {"bila", "cerna", "modra"};
     private static String[] hodUziv = {null, "modra", "cervena"};
