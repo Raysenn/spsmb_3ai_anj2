@@ -1,6 +1,7 @@
 package _22._01m._03d_34;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 
 public class StejneMapyAPodmapy {
@@ -21,9 +22,15 @@ public class StejneMapyAPodmapy {
         HashMap<String, Integer> hmVetsi = vytvoreniANaplneniMapy();
         hmVetsi.put("Robot5", Integer.valueOf(55));
         System.out.println("hmOrig:    " + hmOrig);
-        boolean b;
+        boolean b1, b2, b3;
         //jsou mapy hmStejna a hmOrig stejné?
-        b =
+        Map<String, Integer> tmp = hmOrig;
+        //Map<String, Integer> tmp = hmMensi;
+        //Map<String, Integer> tmp = hmVetsi;
+        b1 = hmStejna.entrySet().containsAll(tmp.entrySet());
+        b2 = hmStejna.entrySet().equals(tmp.entrySet());
+        b3 = hmStejna.equals(tmp);
+        System.out.format("b1: %b, b2: %b, b3:%b%n", b1, b2, b3);
 
     }
 }
