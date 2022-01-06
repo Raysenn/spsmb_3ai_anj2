@@ -22,6 +22,7 @@ package _22y._01m._06d_35;
 // "z prostředka" stávající mapy.
 
 import java.util.Comparator;
+import java.util.SortedMap;
 import java.util.TreeMap;
 
 class VahaKlic implements Comparable<VahaKlic> {
@@ -78,9 +79,10 @@ public class ClassTreeMapUvod {
         tm.put(new VahaKlic(105), "Venca");
         tm.put(new VahaKlic(74), "Karel");
         System.out.println("Mapa: " + tm);
-
-        System.out.println("Nejvice Vazi: ");
-        System.out.println("Dva nejtezsi: ");
+        VahaKlic v = tm.lastKey();
+        System.out.println("Nejvice Vazi: " + v + "=" +tm.get(v));
+        SortedMap<VahaKlic, String> pom = tm.
+        System.out.println("Dva nejtezsi: " + pom + "\n");
     }
     public static void main(String[] args) {
         praceSMapou(new TreeMap<VahaKlic, String>());
