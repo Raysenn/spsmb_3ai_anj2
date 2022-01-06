@@ -81,7 +81,7 @@ public class ClassTreeMapUvod {
         System.out.println("Mapa: " + tm);
         VahaKlic v = tm.lastKey();
         System.out.println("Nejvice Vazi: " + v + "=" +tm.get(v));
-        SortedMap<VahaKlic, String> pom = tm.
+        SortedMap<VahaKlic, String> pom = tm.tailMap(new VahaKlic(85));
         System.out.println("Dva nejtezsi: " + pom + "\n");
     }
     public static void main(String[] args) {
