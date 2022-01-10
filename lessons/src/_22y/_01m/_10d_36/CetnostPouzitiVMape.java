@@ -7,6 +7,9 @@ package _22y._01m._10d_36;
 //mapy přistupováno. Platí pravidlo, že nejdéle nepřistupované prvky jsou na začátku a
 //naposledy přistupovaný prvek na konci. Pořadí je ovlivňováno pouze metodami put() a get()
 
+//Výhodné pro reprezentaci algoritmu LRU (last recently used), kdy se pro nějakou činnost přednostně
+// použije nejméně používaný prvek.
+
 import java.util.LinkedHashMap;
 import java.util.Random;
 
@@ -23,6 +26,7 @@ public class CetnostPouzitiVMape {
         Random r = new Random();
         for (int i = 0; i < 20; i++) {
             String klic = "" + (char) (r.nextInt(6) + 'A');
+            //String klic = "A";
             System.out.print(klic + " ");
             //ovlivňuji pořadí pomocí get()
             Integer hodnota = pristup.get(klic);
