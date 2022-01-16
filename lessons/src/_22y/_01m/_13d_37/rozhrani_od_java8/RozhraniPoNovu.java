@@ -1,4 +1,4 @@
-package _22y._01m._13d_37.rozhrani_od_java8;
+/*package _22y._01m._13d_37.rozhrani_od_java8;
 // Od Java 8 je možné do rozhraní implementovat výchozí těla metod (default)
 // Od Java 9 je možné do rozhraní implementovat privátní fumkce použitelné v default
 // metodách daného rozhraní
@@ -38,4 +38,4 @@ public interface RozhraniPoNovu {
         System.out.println("  Soukromá (private) instanční metoda v rozhraní");
     }
 
-}
+}*/

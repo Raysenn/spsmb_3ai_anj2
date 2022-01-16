@@ -3,12 +3,13 @@ package _22y._01m._10d_36.domaci_ukol;
 import java.util.HashSet;
 
 class Ovoce {
-    private int cena;
-    private String typ;
+    public int cena;
+    public String typ;
 
     public Ovoce(int cena) {
         this.cena = cena;
         this.typ = "Jablko";
+
     }
     @Override
     public String toString() {
@@ -29,11 +30,11 @@ public class ChybneHashovani {
         System.out.println("obsahuje 7:" + intSet.contains(Integer.valueOf(7)));
 
         System.out.println("Toto hashovani nefunguje, opravte:");
-        HashSet<Ovoce> ovoceSet = new HashSet<>();
+        HashSet<Integer> ovoceSet = new HashSet<>();
         for (int i = 6; i <= 8; i++) {
-            ovoceSet.add(new Ovoce(i));
+            ovoceSet.add(Integer.valueOf(i));
         }
         System.out.println("ovoceSet: " + ovoceSet);
-        System.out.println("obsahuje 7:" + ovoceSet.contains(new Ovoce(7)));
+        System.out.println("obsahuje 7:" + ovoceSet.contains(Integer.valueOf(7)));
     }
 }
