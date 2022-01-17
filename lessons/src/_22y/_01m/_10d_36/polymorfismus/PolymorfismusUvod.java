@@ -26,6 +26,7 @@ public class PolymorfismusUvod {
         for (int i = 0; i < z.length; i++) {
             tmp = z[i];
             tmp.vypisInfo();
+            tmp.vypisDelku();
         }
     }
 }
