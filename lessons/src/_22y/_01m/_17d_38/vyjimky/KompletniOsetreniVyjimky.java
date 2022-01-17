@@ -12,18 +12,22 @@ import java.util.Scanner;
 public class KompletniOsetreniVyjimky {
     public static int[] vytvorANactiPole() {
         int[] pole = null;
-        try {
-            Scanner sc = new Scanner(new File("data1.txt"));
-            int n = sc.nextInt();
-            pole = new int[n];
-            for (int i = 0; i < n; i++) {
-                pole[i] = sc.nextInt();
+        String jmeno = "data1.txt";
+        while(true) {
+            try {
+                Scanner sc = new Scanner(new File(jmeno));
+                int n = sc.nextInt();
+                pole = new int[n];
+                for (int i = 0; i < n; i++) {
+                    pole[i] = sc.nextInt();
+                }
+                break;
+            } catch (Exception e) {
+                System.out.println("Soubor neexistuje");
+                System.out.println("Zadej správné jméno souboru");
+                Scanner scKlavesnice = new Scanner(System.in);
+                jmeno = scKlavesnice.next();
             }
-            return pole;
-        }
-        catch(Exception e) {
-            System.out.println("Soubor neexistuje");
-            System.exit(1); // ukončení programu
         }
         return pole;
     }
