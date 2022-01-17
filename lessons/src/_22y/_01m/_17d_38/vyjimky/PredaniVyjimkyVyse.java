@@ -2,6 +2,7 @@ package _22y._01m._17d_38.vyjimky;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 // Jedná se o tzv. propagaci, resp. šíření výjimek. Metoda, kde se výjimka ocitla
@@ -9,6 +10,7 @@ import java.util.Scanner;
 // odpovědnosti se deklaruje  již v hlavičce metody pomocí klíčového
 // slova throws. Viz případ dole. Řešení problému, co s vzniklou
 // výjimkou se tak odsouvá na později...
+// Z prvního pohledu se tak jedná o nejjednodušší řešení.
 public class PredaniVyjimkyVyse {
     public static int[] vytvorANactiPole() throws IOException {
         Scanner sc = new Scanner(new File("data.txt"));
@@ -20,7 +22,8 @@ public class PredaniVyjimkyVyse {
         return pole;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         int[] abc = vytvorANactiPole();
+        System.out.println(Arrays.toString(abc));
     }
 }
