@@ -4,5 +4,13 @@ package _22y._01m._17d_38.domaci_ukol;
 // bude implementovat implicitní (default) metodu kdoJsem() podobně jako v příkladu
 // _13d_37.vnorene_tridy.Test
 
-public class Zadani {
+public class Zadani extends Rodic implements Info {
+    public static void main(String[] args) {
+        Info i = new Zadani();
+        i.kdoJsem();
+        Info.kdoJsemStatic();
+        Zadani.kdoJsemRodicStat();
+        Rodic.kdoJsemRodicStat();
+
+    }
 }
