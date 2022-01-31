@@ -19,6 +19,14 @@ public class Zadani {
 
     public static void main(String[] args) {
         try{
+            SpojovySeznam ss = new SpojovySeznam();
+            ss.vloz("ahoj");
+            ss.vloz(Integer.valueOf(5));
+            ss.vypisSeznam();
+            System.out.println();
+            System.out.println(ss.vyjmiPrvniho());
+            System.out.println(ss.vyjmiPrvniho());
+            System.out.println(ss.vyjmiPrvniho());
 
         }
         catch(Exception e) {
