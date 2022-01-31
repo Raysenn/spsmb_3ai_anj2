@@ -9,7 +9,8 @@ public class RekurzivniVypisAdresare {
         File[] seznam = addr.listFiles(new FilenameFilter() {
             @Override
             public boolean accept(File dir, String name) {
-                return (new File(dir, name)).isDirectory();
+                File f =new File(dir, name);
+                return f.isDirectory() && f.canRead() && f.exists() && ! f.isHidden();
             }
         });
         return seznam;
@@ -37,5 +38,6 @@ public class RekurzivniVypisAdresare {
             System.out.println(seznam[i].getName() + " " + Arrays.toString(vypisAdresar(seznam[i])));
         }*/
         rekVypis(new File("C:\\Program Files\\dotnet"));
+        //rekVypis(new File("C:\\"));
     }
 }
