@@ -28,7 +28,9 @@ public class EDalsiDovednostiSeSoubory {
             fw.write(c);
         }
         //přesun na začátek souboru
-        fr.reset();
+        //fr.reset(); //bohužel pro FileReader nepodporováno
+        fr.close();
+        fr = new FileReader(frJm);
 
         fw.close();
         //  rozšiřování souboru b.txt:
