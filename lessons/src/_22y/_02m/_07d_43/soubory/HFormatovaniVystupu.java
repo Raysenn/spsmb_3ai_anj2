@@ -9,7 +9,7 @@ public class HFormatovaniVystupu {
         FileWriter fwForm = new FileWriter("form.txt");
         PrintWriter form = new PrintWriter(fwForm);
         FileWriter fwNeForm = new FileWriter("neform.txt");
-        for (int i = 65; i < 75; i++) {
+        for (int i = 1; i < 75; i++) {
             System.out.println(i + " ");
             form.print(i + " ");// resp. form.format("%d ", i);
             fwNeForm.write(i);
