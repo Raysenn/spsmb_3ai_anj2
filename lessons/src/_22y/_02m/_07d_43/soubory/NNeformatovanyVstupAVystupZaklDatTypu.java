@@ -13,7 +13,7 @@ public class NNeformatovanyVstupAVystupZaklDatTypu {
 
         for (int i = 0; i < pocet; i++) {
             int k = (int) (1000.0 * Math.random());
-            System.out.println(k + " ");
+            System.out.print(k + " ");
             fw.writeInt(k);
         }
         fw.writeDouble(Math.PI);
@@ -26,7 +26,7 @@ public class NNeformatovanyVstupAVystupZaklDatTypu {
         pocet = fr.readInt();
         for (int i = 0; i < pocet; i++) {
             int k = fr.readInt();
-            System.out.println(k + " ");
+            System.out.print(k + " ");
         }
         double pi = fr.readDouble();
         double e = fr.readDouble();
