@@ -8,9 +8,9 @@ public class Zadani extends Rodic implements Info {
     public static void main(String[] args) {
         Info i = new Zadani();
         i.kdoJsem();
-        Info.kdoJsemStatic();
-        Zadani.kdoJsemRodicStat();
-        Rodic.kdoJsemRodicStat();
+        Info.kdoJsemStat();
+        //Zadani.kdoJsemRodicStat();
+        Rodic.rodicKdoJsemStat();
 
     }
 }

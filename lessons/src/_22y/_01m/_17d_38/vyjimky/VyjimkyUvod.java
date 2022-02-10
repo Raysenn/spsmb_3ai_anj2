@@ -24,7 +24,8 @@ import java.util.Scanner;
 // 3. částečné ošetření v metodě, kde se vyskytla a navíc poslání informace
 //    o jejím výskytu do nadřazené úrovně.
 
-public class VyjimkyUvod {
+public class
+VyjimkyUvod {
     public static void main(String[] args) throws FileNotFoundException {
         Scanner sc = new Scanner(new File("cisla.txt"));
         System.out.println("Precte neco ze souboru");
