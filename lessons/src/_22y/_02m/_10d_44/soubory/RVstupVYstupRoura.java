@@ -5,7 +5,7 @@ package _22y._02m._10d_44.soubory;
 // obrazovky na stisk klávesy. Je možné komunikovat přes rouru
 // mezi metodami, či vlákny.
 // Výhodou je, že získáme ideální zařízení pro uložení dočasných dat,
-// která by se jinakukládala nejčastěji do pomocného souboru a ten
+// která by se jinak ukládala nejčastěji do pomocného souboru a ten
 // by se pos končení programu vymazal. Roura tím, že je vzniká
 // v paměti je však mnohem rychlejší.
 
@@ -36,7 +36,7 @@ public class RVstupVYstupRoura {
 
     public static void main(String[] args) throws IOException {
         FileWriter fw =new FileWriter("data120.txt");
-        for (int i = 0; i <= 1100; i++) {
+        for (int i = 0; i <= 999; i++) {
             fw.write(String.format("%d%n",i));
         }
         fw.close();

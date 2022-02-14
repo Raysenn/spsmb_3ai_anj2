@@ -19,14 +19,14 @@ public class DBConnection {
     private final int portNumber = 3306;
     private final String dbName = "ucitelverejne_stemberk_test01";
     private final String userName="stemberk";
-    private final String password="";
+    private final String password="***heslo***";
     private Connection conn;
     public void getConnectionToDatabase() throws SQLException {
         {
             if (this.dbms.equals("mysql")) {
                 this.conn =
                         DriverManager.getConnection("jdbc:" + this.dbms + "://" + this.serverName +
-                                        ":" + this.portNumber + "/" + this.dbName);
+                                        ":" + this.portNumber + "/" + this.dbName, this.userName, this.password);
                 this.conn.setCatalog(this.dbName);
             }
             System.out.println("Connected to database");
