@@ -193,8 +193,9 @@ public class DBconn2 {
     public static void createDatabase(Connection connArg, String dbNameArg) {
         try {
             Statement s = connArg.createStatement();
+            s.executeUpdate("SET sql_mode='ANSI_QUOTES';");
             String newDatabaseString =
-                    "CREATE DATABASE IF NOT EXISTS " + dbNameArg;
+                    "CREATE DATABASE IF NOT EXISTS \"" + dbNameArg + "\"";
             // String newDatabaseString = "CREATE DATABASE " + dbName;
             s.executeUpdate(newDatabaseString);
 
@@ -235,7 +236,7 @@ public class DBconn2 {
             myConnection = dBconn2.getConnection();
             DBconn2.createDatabase(myConnection,
                     dBconn2.dbName);
-
+            initializeTables(myConnection, dBconn2.dbName, dBconn2.dbms);
             DBconn2.cursorHoldabilitySupport(myConnection);
             DBconn2.rowIdLifetime(myConnection);
 

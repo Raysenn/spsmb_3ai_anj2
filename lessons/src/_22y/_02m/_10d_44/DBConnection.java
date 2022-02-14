@@ -39,7 +39,7 @@ public class DBConnection {
             DBConnection dbConnection = new DBConnection();
             dbConnection.getConnectionToDatabase();
             Statement stmt = dbConnection.conn.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from vyrobky");
+            ResultSet rs = stmt.executeQuery("select nazev, jednotka, cena  from vyrobky");
             while (rs.next())
                 System.out.println(rs.getInt(1) + "  " + rs.getString(2) + "  " + rs.getString(3));
             dbConnection.conn.close();
