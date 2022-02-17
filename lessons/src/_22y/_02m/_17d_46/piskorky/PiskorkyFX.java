@@ -11,7 +11,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
-
+//add --module-path "Y:\stemberk\verejne_zaci\javafx-sdk-17.0.1\lib" --add-modules javafx.controls,javafx.fxml
 public class PiskorkyFX extends Application {
     private final String VERSION = "1.0";
     private final String TITULEK = "Piškorky" + this.VERSION;
