@@ -16,6 +16,7 @@ public class PiskorkyFX extends Application {
     private final String VERSION = "1.0";
     private final String TITULEK = "Piškorky" + this.VERSION;
     private PiskorkyStatus ps = new PiskorkyStatus(12);
+    private Button[][] herniTlacitka;
 
     private Label labelKdoTahne = new Label("Táhne: ");
     private Label labelKdoTahne2 = new Label();
@@ -25,9 +26,14 @@ public class PiskorkyFX extends Application {
     public void start(Stage stage) throws Exception {
         try {
             GridPane gp = new GridPane();
+            this.herniTlacitka = new Button[this.ps.rozmerHraciPlochy + 1][this.ps.rozmerHraciPlochy + 1];
             for (int i = 0; i < this.ps.rozmerHraciPlochy + 1; i++) {
                 for (int j = 0; j < this.ps.rozmerHraciPlochy + 1; j++) {
-                    Button b = this.ps.herniTlacitka[i][j];
+                    Button b = new Button();
+                    b.setPrefSize(28,28);
+                    b.getProperties().putAll(this.ps.herniTlacitka[i][j]);
+                    this.herniTlacitka[i][j] = b;
+
                     //node, sloupec, řádek - ano je to obráceně oproti dosavaním principům
                     gp.add(b, j, i);
                     //Aktivní budou tlačítka, která nejsou na okraji
@@ -62,7 +68,8 @@ public class PiskorkyFX extends Application {
         System.out.format("i:%d, j:%d%n", i, j);
         stisknuteTlacitko.setText(this.ps.hraci.get(this.ps.aktivniHrac).toString().substring(0, 1));
         //this.ps.herniPlochaHracu[i][j] = this.ps.aktivniHrac;
-        stisknuteTlacitko.getProperties().put("player",Integer.valueOf(this.ps.aktivniHrac));
+        //stisknuteTlacitko.getProperties().put("player",Integer.valueOf(this.ps.aktivniHrac));
+        this.ps.herniTlacitka[i][j].put("player",this.ps.aktivniHrac);
 
         //přepnutí hráče
         if (++this.ps.aktivniHrac >= this.ps.hraci.size()) {
@@ -123,7 +130,7 @@ public class PiskorkyFX extends Application {
         for (i = 0; i < this.ps.rozmerHraciPlochy; i++) {
             for (j = 0; j < this.ps.rozmerHraciPlochy; j++) {
                 //System.out.format(" %02d ",this.ps.herniPlochaHracu[i][j]);
-                int player = (int) this.ps.herniTlacitka[i][j].getProperties().get("player");
+                int player = (int) this.ps.herniTlacitka[i][j].get("player");
                 System.out.format("%02d ",  player);
             }
             System.out.println();
@@ -131,7 +138,7 @@ public class PiskorkyFX extends Application {
     }
 
     private boolean isVerticalWin(int radek, int sloupec, int n) {
-        int aktualniHrac = (int)this.ps.herniTlacitka[radek][sloupec].getProperties().get("player");
+        int aktualniHrac = (int)this.ps.herniTlacitka[radek][sloupec].get("player");
         if (aktualniHrac < 0) {
             return false;
         }
@@ -139,7 +146,7 @@ public class PiskorkyFX extends Application {
             if (this.ps.rozmerHraciPlochy < i) {
                 return false;
             }
-            if (aktualniHrac != (int)this.ps.herniTlacitka[i][sloupec].getProperties().get("player")) {
+            if (aktualniHrac != (int)this.ps.herniTlacitka[i][sloupec].get("player")) {
                 return false;
             }
         }
@@ -147,7 +154,7 @@ public class PiskorkyFX extends Application {
     }
 
     private boolean isHorizontalWin(int radek, int sloupec, int n) {
-        int aktualniHrac = (int)this.ps.herniTlacitka[radek][sloupec].getProperties().get("player");
+        int aktualniHrac = (int)this.ps.herniTlacitka[radek][sloupec].get("player");
         if (aktualniHrac < 0) {
             return false;
         }
@@ -155,7 +162,7 @@ public class PiskorkyFX extends Application {
             if (this.ps.rozmerHraciPlochy < j) {
                 return false;
             }
-            if (aktualniHrac != (int)this.ps.herniTlacitka[radek][j].getProperties().get("player")) {
+            if (aktualniHrac != (int)this.ps.herniTlacitka[radek][j].get("player")) {
                 return false;
             }
         }
@@ -163,7 +170,7 @@ public class PiskorkyFX extends Application {
     }
 
     private boolean isDiagonalWin(int radek, int sloupec, int n) {
-        int aktualniHrac = (int)this.ps.herniTlacitka[radek][sloupec].getProperties().get("player");
+        int aktualniHrac = (int)this.ps.herniTlacitka[radek][sloupec].get("player");
         if (aktualniHrac < 0) {
             return false;
         }
@@ -175,7 +182,7 @@ public class PiskorkyFX extends Application {
             if (j > this.ps.rozmerHraciPlochy) {
                 return false;
             }
-            if (aktualniHrac != (int)this.ps.herniTlacitka[i][j].getProperties().get("player")) {
+            if (aktualniHrac != (int)this.ps.herniTlacitka[i][j].get("player")) {
                 return false;
             }
         }
@@ -183,7 +190,7 @@ public class PiskorkyFX extends Application {
     }
 
     private boolean isReverseDiagonalWin(int radek, int sloupec, int n) {
-        int aktualniHrac = (int)this.ps.herniTlacitka[radek][sloupec].getProperties().get("player");
+        int aktualniHrac = (int)this.ps.herniTlacitka[radek][sloupec].get("player");
         if (aktualniHrac < 0) {
             return false;
         }
@@ -195,7 +202,7 @@ public class PiskorkyFX extends Application {
             if (j > this.ps.rozmerHraciPlochy) {
                 return false;
             }
-            if (aktualniHrac != (int)this.ps.herniTlacitka[i][j].getProperties().get("player")) {
+            if (aktualniHrac != (int)this.ps.herniTlacitka[i][j].get("player")) {
                 return false;
             }
         }
