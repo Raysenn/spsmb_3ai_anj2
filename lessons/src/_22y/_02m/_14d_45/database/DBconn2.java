@@ -239,6 +239,7 @@ public class DBconn2 {
             initializeTables(myConnection, dBconn2.dbName, dBconn2.dbms);
             DBconn2.cursorHoldabilitySupport(myConnection);
             DBconn2.rowIdLifetime(myConnection);
+            CoffeesTable.viewTable(myConnection);
 
         } catch (SQLException e) {
             DBconn2.printSQLException(e);
