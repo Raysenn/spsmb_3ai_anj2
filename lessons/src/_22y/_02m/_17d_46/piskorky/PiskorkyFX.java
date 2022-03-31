@@ -36,7 +36,7 @@ public class PiskorkyFX extends Application {
     private Label labelKdoTahne = new Label("Táhne: ");
     private Label labelKdoTahne2 = new Label();
     private HBox panelKdoHraje = new HBox(labelKdoTahne, labelKdoTahne2);
-    private String hostname = "localhost";
+    private String hostname = "192.168.9.43";
     private int port = 8081;
     private Stage stjh;
     private TextField tfjh;
@@ -237,7 +237,7 @@ public class PiskorkyFX extends Application {
         }
         stisknuteTlacitko.getProperties().put("player", this.ps.aktivniHrac);
         System.out.println();
-        int N = 3;
+        int N = 5;
         System.out.format("verticalWin:%b, horizontalWin:%b, diagonalwin:%b, isReverseDiagonalWin:%b%n",
                 this.isVerticalWin(i, j, N),
                 this.isHorizontalWin(i, j, N),
@@ -379,10 +379,10 @@ public class PiskorkyFX extends Application {
     }
 
     private PiskorkyStatus getPiskorkyStatus() {
-        var hostname = "localhost";
-        int port = 8081;
+        //var hostname = "localhost";
+        //int port = 8081;
 
-        try (var socket = new Socket(hostname, port)) {
+        try (var socket = new Socket(this.hostname, this.port)) {
             try (var writer = socket.getOutputStream()) {
                 writer.write(20);
             }
@@ -393,7 +393,7 @@ public class PiskorkyFX extends Application {
             e.printStackTrace();
         }
 
-        try (var socket = new Socket(hostname, port)) {
+        try (var socket = new Socket(this.hostname, this.port)) {
             try (var reader = new ObjectInputStream(socket.getInputStream())) {
                 this.ps = (PiskorkyStatus) reader.readObject();
             } catch (Exception e) {

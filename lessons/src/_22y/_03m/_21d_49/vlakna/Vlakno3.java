@@ -1,13 +1,15 @@
 package _22y._03m._21d_49.vlakna;
-// Zde se obě vlákna pravidelně střídají.
-// Metoda yeld() zde slouží pro předání řízení dalšímu vláknu v pořadí
-// (klidně i znovu tomu samému).
-public class Vlakno2 extends  Thread {
+
+public class Vlakno3 extends  Thread {
     @Override
     public void run() {
         while(ReadV1.hotovo == false ) {
             System.out.print(ReadV1.suma + "\r");
-            Thread.yield();
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
         System.out.println(ReadV1.suma);
     }
