@@ -22,6 +22,14 @@ package _22y._03m._28d_51.vlakna_producent_konzument;
 // notifyAll()  - probudí všechna vlákna, která byla v tomto objektu pozastavena
 //                metodou wait()
 // notify()     - probudí pouze jedno vlákno, přičemž není určeno které.
+
+// Problematika hladovění a uváznutí
+// hladovění (starvation) - pojem kdy jedno, či více vláken sice obdrží procesor, ale není schopno
+// provést dostatečný pokrok ve výpočtu, protože je mu buď procesor vzápětí odebrán, nebo
+// celý vymezený čas jen čeká na uvolnění nějakého zdroje.
+// uváznutí (deadlock)    - pokud hladovění způsobí zablokování celého výpočtu. Nejčastějším případem
+// je situace, kdy dvě vlákna alokují každé jeden zdroj a vzájemně čekají až ten druhý jej uvolní.
+
 class Producent extends Thread {
     private Cteni c;
     Producent(Cteni c) {
@@ -37,6 +45,9 @@ class Producent extends Thread {
 public class SynchronizaceCasovePosloupnostiVlaken {
     public static void main(String[] args) {
         Cteni ct1 = new Cteni("data.txt");
-        //Producent vlPr1 = new Producent(ct1);
+        Producent vlPr2 = new Producent(ct1);
+        Konzument vlKon2 = new Konzument(ct1);
+        vlKon2.start();
+        vlPr2.start();
     }
 }
