@@ -25,7 +25,7 @@ public class Daemon extends Thread {
         System.out.println("Začátek programu");
         Daemon v1D = new Daemon();
         //nastavení vlákna jako démon
-        //v1D.setDaemon(true);
+        v1D.setDaemon(true);
         v1D.start();
         if(v1D.isDaemon()){
             System.out.println("Program hned skončí");

@@ -1,5 +1,4 @@
-package _22y._02m._17d_46.socket;
-//Socket - nějaký koncový bod, který umožňuje komunikaci počítačovou sítí
+package _22y._02m._17d_46.socket;//Socket - nějaký koncový bod, který umožňuje komunikaci počítačovou sítí
 //         s okolím. Sockety se používají pro vytvoření komunikace mezi
 //         klientským programem a serverem.
 // Socket        - třída reprezentující klienta (TCP protokol)
