@@ -1,3 +1,10 @@
+
+/* Saved in UTF-8 codepage: Příliš žluťoučký kůň úpěl ďábelské ódy.  ÷ × ¤
+ * Check: «Stereotype», Section mark - §, Copyright-©, Alpha-α , Beta-β, Smile-😊
+ * Sem se obyčejně umisťuje základní licenční ujednáni (podívejte se do zdrojových)
+ * souborů standardní knihovny). Zde je např. umístěn text, který editorům, jež to dokáží,
+ *  umožní nastavit správnou kódovou stránku.
+ */
 package _22y._04m.javadoc;
 // Dokumentační komentáře slouží k popisu tzv. API (Application Programming Interface). Onou
 // aplikací  bývá většinou knihovna, framwework, nebo program, používaný jinými programi.
