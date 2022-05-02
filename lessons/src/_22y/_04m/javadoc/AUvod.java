@@ -48,7 +48,7 @@ package _22y._04m.javadoc;
  * @version 2022-Jaro
  */
 public class AUvod {
-    /** Dokumentace atributu*/
+    /** Dokumentace atributu */
     public static final String ATTR = "Veřejný konstantní atribut";
 
     /**
