@@ -99,7 +99,10 @@ package _22y._04m.lambda;
 // Comparator<T>                boolean equals(T o)
 // Observer                     void update(Observable o, Object arg)
 
-import java.util.function.IntBinaryOperator;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.function.*;
 
 // Překladač definuje  lambda výraz jako instanci funkčního rozhraní,
 // jehož metoda má odpovídající parametry a vrací hodnotu odpovídajícího typu. Obecný zápis
@@ -123,5 +126,21 @@ public class AUvod {
         ibo = (a, b) -> a - b;
         result = ibo.applyAsInt(5,6);
         System.out.println(result);
+        //iterace seznamu pomocí třídy Consumer
+        ArrayList<String> als = new ArrayList<>();
+        als.add("ahoj"); als.add("cau"); als.add("nazdar");
+        als.forEach(s -> System.out.println(s));
+        //Supplier pro získání actual času
+        Supplier<LocalDateTime> time = () -> LocalDateTime.now();
+        System.out.println(time.get());
+        //Funkce pro vrácení stringu s velkými písmeny
+        Function<String, String> capitalize = s -> s.toUpperCase();
+        System.out.println(capitalize.apply("tiger"));
+        //Použití unárního operátoru
+        UnaryOperator<Integer> xor = integer -> integer ^ 5;
+        System.out.println(xor.apply(1));
+        //Použití predikátoru
+        Predicate<Integer> pr = integer -> integer>5;
+        System.out.println(pr.test(6));
     }
 }
