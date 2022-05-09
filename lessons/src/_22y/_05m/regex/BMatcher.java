@@ -50,6 +50,10 @@ import java.util.regex.Pattern;
 // \bpro\b
 // \b(a|i|o|u)\b
 // \d+\.\d+\.\d+\.\d+
+// \d{1,3}\.){3}\d{1,3}
+// http://[a-zA-Z_.]+
+//  (http://)?w{3}[a-zA-Z_.]+\.cz
+// [a-zA-Z_.]+@[a-zA-Z_.]+
 public class BMatcher {
     public static void main(String[] args) {
         Pattern pattern = Pattern.compile("w3schools", Pattern.CASE_INSENSITIVE);
