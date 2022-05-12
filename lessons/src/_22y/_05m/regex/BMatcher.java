@@ -40,6 +40,10 @@ import java.util.regex.Pattern;
 // n{x,y}           - x až y n za sebou
 // n{x,}            - x a více n za sebou
 
+// greedy (chamtivý) vs non-greedy (líný) kvantifikátor
+// greedy           - standartní chování (např.: .*), označí nejdelší možný řetězec
+// non greedy       - po přidání otazníku (např.: .*?), označí nejkratší možný řetězec
+
 // logické spojky
 // XY	            - X ihned za Y
 // X|Y	            - X neboY
