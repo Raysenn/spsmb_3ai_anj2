@@ -33,27 +33,23 @@ import java.util.regex.Pattern;
 // \\uxxxx           - nalezení unicode znaku, specifikovaného pomocí hexadecimálního čísla
 
 // kvantifikátory - určují počet opakování
-// n+               - jedno nebo více n
-// n*               - nula nebo více n
+// n+               - jedno nebo více n (greedy)
+// n+?               - jedno nebo více n (non-greedy)
+// n*               - nula nebo více n  (greedy)
+// n*?               - nula nebo více n  (non-greedy)
 // n?               - nula nebo jedno n
 // n{x}             - přesně x n za sebou
 // n{x,y}           - x až y n za sebou
 // n{x,}            - x a více n za sebou
 
-// greedy (chamtivý) vs non-greedy (líný) kvantifikátor
+// greedy vs non-greedy
 // greedy           - standartní chování (např.: .*), označí nejdelší možný řetězec
-// non greedy       - po přidání otazníku (např.: .*?), označí nejkratší možný řetězec
+// non greedy           - po přidání otazníku (např.: .*?), označí nejkratší možný řetězec
 
 // logické spojky
 // XY	            - X ihned za Y
 // X|Y	            - X neboY
-
-// seskupování:
-// (X)                - skupina, slouží k zapamatování při nahrazování pomocí \1 až \\n/p>
-//                      reference při nahrazování pomocí $n
-// (?'jmeno_skupiny') - pojmenování skupiny. V Javě potřeba použít (?<jmeno_skupiny>)
-//                      reference pak pomocí \k<name>, resp. ${name}
-// (?:X)              - seskupí, ale nezapamatuje
+// (X)              - párování logických spojek slouží také k zapamatování při nahrazování pomocí \1 až \\n/p>
 
 // příklady:
 // .*1
@@ -64,7 +60,6 @@ import java.util.regex.Pattern;
 // http://[a-zA-Z_.]+
 //  (http://)?w{3}[a-zA-Z_.]+\.cz
 // [a-zA-Z_.]+@[a-zA-Z_.]+
-//  <p>.*<\/p>      pro greedy/lazy <p>Hello</p><span>Awesome</span><p>World</p>
 public class BMatcher {
     public static void main(String[] args) {
         Pattern pattern = Pattern.compile("w3schools", Pattern.CASE_INSENSITIVE);
