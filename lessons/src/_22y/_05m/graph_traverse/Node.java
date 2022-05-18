@@ -5,8 +5,20 @@ import java.util.ArrayList;
 public class Node implements Comparable {
     int data;
     ArrayList<Node> next;
+    boolean isFinal;
 
+    @Override
+    public String toString() {
+        return "Node{" +
+                "data=" + data +
+                ", isFinal=" + isFinal +
+                '}';
+    }
 
+    public Node(int data, boolean isFinal) {
+        this(data);
+        this.isFinal = isFinal;
+    }
 
     Node(int d)
     {

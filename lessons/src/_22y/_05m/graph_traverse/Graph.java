@@ -6,57 +6,25 @@ import java.util.Iterator;
 public class Graph {
     //hlavička, začátek seznamu
     private Node head;
-    public void append(int data){
-        //spojový seznam je prázdný, v hlavičce je null
-        if (this.head == null) {
-            this.head = new Node(data);
-            return;
-        }
-        //pokud není prázdný, najdu konec a přidám nový Node
 
-        Node curr = this.head;
-        while (curr.next != null)
-            curr = curr.next;
-
-        Node newNode = new Node(data);
-        curr.next = newNode;
+    public Graph() {
+        this.head = new Node(0);
     }
 
-    public _21y._11m._29d_27.linked_list.Node getHead() {
+    public Node getHead() {
         return head;
     }
 
-    void printList()
+    void printGraphDFS(Node n)
     {
-        Node n = this.head;
-        int i = 0;
-        while (n != null) {
-            System.out.print(((i%10==0)?"\n":" ") + n.data);
-            n = n.next;
-            i++;
+        for (Node currentN:n.next) {
+            System.out.print(currentN.data + " ");
+            if (n.next.isEmpty()){
+                System.out.println();
+                break;
+            }else{
+                printGraphDFS(currentN);
+            }
         }
-    }
-
-    @Override
-    public Iterator iterator() {
-        return new Iterator() {
-            //Výhoda této vnitřní (a anonymní) třídy:
-            //vidíme na členskou proměnnou (head) vnější třídy
-            private Node current = head;
-            @Override
-            public boolean hasNext() {
-                return this.current != null;
-            }
-
-            @Override
-            public Object next() {
-                if(this.hasNext()){
-                    int data = this.current.data;
-                    this.current = this.current.next;
-                    return data;
-                }
-                return null;
-            }
-        };
     }
 }
